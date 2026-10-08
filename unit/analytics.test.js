@@ -1,0 +1,12 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {movingAverage,rsi,tradeSizing} from '../src/analytics.js';
+const plan={capital:10000,risk:1,entry:100,stop:95,target:110,direction:'Long'};
+test('long sizing keeps loss inside risk budget',()=>{const result=tradeSizing(plan);assert.equal(result.shares,20);assert.equal(result.maxLoss,100);assert.equal(result.potentialProfit,200);assert.equal(result.ratio,2)});
+test('short sizing reverses stop and target directions',()=>{const result=tradeSizing({...plan,direction:'Short',stop:105,target:90});assert.equal(result.shares,20);assert.equal(result.ratio,2)});
+test('position sizing caps exposure at available capital',()=>{const result=tradeSizing({...plan,risk:10,stop:99.9});assert.equal(result.shares,100);assert.ok(result.positionValue<=plan.capital);assert.ok(result.maxLoss<=result.riskBudget)});
+test('invalid stop and target directions are rejected',()=>{assert.ok(tradeSizing({...plan,stop:100}).error);assert.ok(tradeSizing({...plan,target:90}).error);assert.ok(tradeSizing({...plan,direction:'Short'}).error)});
+test('invalid amounts do not produce an actionable plan',()=>{for(const capital of [0,-1,Infinity,NaN])assert.ok(tradeSizing({...plan,capital}).error);assert.ok(tradeSizing({...plan,risk:101}).error);assert.equal(tradeSizing({...plan,capital:1}).shares,0)});
+test('moving averages skip incomplete windows',()=>{assert.deepEqual(movingAverage([10,20,30,40],3),[null,null,20,30])});
+test('RSI handles rising, falling and unchanged series',()=>{assert.equal(rsi(Array.from({length:20},(_,i)=>i+1)),100);assert.equal(rsi(Array.from({length:20},(_,i)=>20-i)),0);assert.equal(rsi(Array(20).fill(10)),50)});
+test('RSI requires a complete lookback window',()=>{assert.equal(rsi([1,2,3]),null)});
