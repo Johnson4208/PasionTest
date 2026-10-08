@@ -1,0 +1,61 @@
+.dashboard-dialog.plans-dialog {
+ background: var(--pref-page, #f5f7fa);
+ color: var(--pref-text, #123654);
+
+ > header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  align-items: center;
+  background: var(--pref-page, #f5f7fa);
+  border-bottom: 1px solid var(--pref-border, #e0e8ef);
+
+  h2 { color: var(--pref-text, #123654); }
+ }
+
+ .plans-content { width: min(1040px, 100%); margin: 0 auto; padding: clamp(24px, 5vh, 60px) 0 32px; }
+ .plans-intro {
+  margin-bottom: 34px;
+  text-align: center;
+  h3 { margin: 0 0 14px; font: 400 clamp(28px, 3vw, 40px)/1.3 'Libre Baskerville', Georgia, serif; letter-spacing: -.7px; color: var(--pref-text, #123654); }
+  p { margin: 0; color: var(--pref-muted, #607286); font-size: 16px; line-height: 1.7; }
+ }
+ .workspace-plan-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; }
+ .workspace-plan {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: clamp(24px, 3vw, 38px);
+  border: 1px solid var(--pref-border, #dce6ef);
+  border-radius: 16px;
+  background: var(--pref-surface, #fff);
+  box-shadow: 0 8px 30px #12365405;
+  h3 { margin: 10px 0 18px; font-size: 28px; font-weight: 600; color: var(--pref-text, #123654); }
+  ul { display: grid; gap: 16px; margin: 22px 0 32px; padding: 0; list-style: none; }
+  li { display: flex; align-items: flex-start; gap: 11px; color: var(--pref-text, #425466); font-size: 14px; line-height: 1.6; svg { flex-shrink: 0; margin-top: 2px; color: var(--pref-success, #16806c); } }
+ }
+ .workspace-plan-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 26px; }
+ .workspace-plan-icon { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 13px; color: var(--pref-accent, #334e68); background: var(--pref-soft, #edf3f8); svg { width: 30px; height: 30px; } }
+ .workspace-plan-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 20px; color: var(--pref-success, #16806c); background: var(--pref-success-soft, #eaf7f0); font-size: 12px; font-weight: 500; line-height: 1.6; }
+ .workspace-plan-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 1.3px; text-transform: uppercase; color: var(--pref-muted, #607286); }
+ .workspace-plan-price { font-size: 27px; font-weight: 600; color: var(--pref-accent, #334e68); }
+ .workspace-plan-description { min-height: 48px; margin: 14px 0 0; color: var(--pref-muted, #607286); font-size: 14px; line-height: 1.8; }
+ .workspace-plan-action { margin-top: auto; min-height: 48px; width: 100%; font-size: 14px; color: var(--pref-on-accent, #fff); background: var(--pref-button, #334e68); border-color: var(--pref-button, #334e68); svg { margin-inline-start: 4px; } &:hover { background: var(--pref-button-hover, #243d54); } }
+ .workspace-plan-unavailable { display: grid; place-items: center; min-height: 48px; padding: 10px 14px; margin-top: auto; border: 1px dashed var(--pref-border, #dce6ef); border-radius: 7px; color: var(--pref-muted, #607286); background: var(--pref-soft, #f3f7fa); font-size: 13px; text-align: center; line-height: 1.7; }
+ .pro-plan { background: var(--pref-soft, #edf3f8); box-shadow: none; .workspace-plan-badge { color: var(--pref-muted, #607286); background: var(--pref-surface, #fff); } .workspace-plan-icon { background: var(--pref-surface, #fff); } li svg { color: var(--pref-muted, #607286); } }
+ .plans-roadmap-note { max-width: 670px; margin: 28px auto 0; color: var(--pref-muted, #607286); font-size: 13px; line-height: 1.8; text-align: center; }
+}
+
+html[dir=rtl] .workspace-plan-action svg { transform: rotate(180deg); }
+
+@media(max-width: 700px) {
+ .dashboard-dialog.plans-dialog {
+  .plans-content { padding-top: 26px; }
+  .plans-intro { margin-bottom: 24px; text-align: start; p { font-size: 14px; } }
+  .workspace-plan-grid { grid-template-columns: 1fr; gap: 18px; }
+  .workspace-plan { padding: 24px; }
+  .workspace-plan-heading { margin-bottom: 20px; }
+  .workspace-plan-description { min-height: 0; }
+  .plans-roadmap-note { text-align: start; }
+ }
+}

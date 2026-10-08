@@ -1,0 +1,291 @@
+.investment-research {
+  --ir-ink:#183a60;
+  --ir-deep:#12365d;
+  --ir-muted:#6d8299;
+  --ir-blue:#176df3;
+  --ir-line:#dce8f5;
+  --ir-soft:#f4f8fd;
+  --ir-green:#08a47b;
+  display:grid;
+  gap:15px;
+  min-width:0;
+  color:var(--ir-ink);
+}
+.ir-company-card,.ir-card,.ir-model-card,.ir-final-recommendation {
+  min-width:0;
+  border:1px solid var(--ir-line);
+  border-radius:12px;
+  background:linear-gradient(145deg,#fff 40%,#fbfdff);
+  box-shadow:0 4px 15px #284f7608;
+}
+.ir-company-card { padding:12px 16px 0; }
+.ir-company-overview {
+  display:grid;
+  grid-template-columns:minmax(205px,1.35fr) minmax(190px,1fr) repeat(4,minmax(82px,.57fr)) max-content;
+  gap:0;
+  align-items:center;
+  min-height:78px;
+}
+.ir-company-identity { display:flex; align-items:center; gap:14px; min-width:0; }
+.ir-company-logo {
+  display:grid;
+  place-items:center;
+  width:52px;
+  height:52px;
+  flex:none;
+  border:1px solid #c5dff2;
+  border-radius:14px;
+  background:linear-gradient(145deg,#eefaff,#fff 55%,#e7f3fc);
+  color:#147fc3;
+  font-size:19px;
+  font-weight:850;
+  font-style:italic;
+  letter-spacing:-1.5px;
+  box-shadow:inset 0 -4px 10px #d2e9f980;
+}
+.ir-company-identity h1 { margin:0; color:#173b62; font-size:20px; line-height:1.35; letter-spacing:-.25px; }
+.ir-company-tags { display:flex; align-items:center; gap:8px; margin-top:3px; }
+.ir-company-tags b { padding:2px 8px; border-radius:20px; background:#edf5ff; color:#3678bd; font-size:12px; }
+.ir-company-tags span { color:#6c83a0; font-size:17px; }
+.ir-company-identity p { margin:4px 0 0; color:#7388a0; font-size:12px; }
+.ir-company-identity p i { display:inline-block; width:1px; height:11px; margin:0 8px -2px; background:#d0dce8; }
+.ir-quote { display:grid; grid-template-columns:max-content 1fr; gap:4px 9px; align-items:center; min-height:50px; padding:5px 15px; border-inline:1px solid #e6edf5; }
+.ir-quote>strong { color:#183f69; font-size:22px; letter-spacing:-.4px; white-space:nowrap; }
+.ir-quote>strong small { color:#536f8c; font-size:12px; font-weight:600; }
+.ir-quote>span { color:#079e77; font-size:12px; font-weight:700; white-space:nowrap; }
+.ir-quote>em { grid-column:1 / -1; justify-self:start; padding:3px 8px; border-radius:99px; background:#eef6ff; color:#3975b7; font-size:10px; font-style:normal; }
+.ir-company-stat { display:grid; gap:7px; align-content:center; min-height:42px; padding:4px 12px; border-right:1px solid #e6edf5; }
+.ir-company-stat:nth-last-of-type(1) { border-right:0; }
+.ir-company-stat span { color:#7489a0; font-size:11px; white-space:nowrap; }
+.ir-company-stat strong { color:#1b426b; font-size:14px; white-space:nowrap; }
+.ir-watch-button { display:flex; align-items:center; justify-content:center; gap:7px; min-height:38px; margin-inline-start:10px; padding:8px 11px; border:1px solid #d9e6f4; border-radius:8px; background:#f7faff; color:#2868b0; font-size:11px; font-weight:700; white-space:nowrap; cursor:pointer; }
+.ir-watch-button:hover { border-color:#aacbf1; background:#eef6ff; }
+.ir-watch-button>span { font-size:16px; line-height:1; }
+.ir-watch-button.is-saved { border-color:#b9e6d6; background:#effaf5; color:#087e62; }
+.ir-tabs { display:flex; gap:5px; margin-top:10px; padding:9px 0; overflow:auto; border-top:1px solid #e9f0f7; scrollbar-width:thin; }
+.ir-tabs button { flex:none; min-height:36px; padding:8px 18px; border:1px solid transparent; border-radius:99px; background:#f4f8fd; color:#5d7793; font-size:12px; font-weight:650; cursor:pointer; }
+.ir-tabs button:hover { border-color:#cddff3; color:#1a68c9; }
+.ir-tabs button.is-active { background:#2478ee; color:#fff; box-shadow:0 3px 9px #176df333; }
+.ir-disclosure { display:flex; align-items:center; gap:7px; padding:0 0 10px; color:#8395a9; font-size:10px; }
+.ir-disclosure-dot { width:7px; height:7px; border-radius:50%; background:#e3a644; box-shadow:0 0 0 3px #fff4df; }
+.ir-top-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); gap:12px; scroll-margin-top:16px; }
+.ir-card { padding:16px; }
+.ir-section-heading { display:flex; align-items:center; gap:10px; min-width:0; }
+.ir-section-heading>div { min-width:0; }
+.ir-section-heading h2 { margin:0; color:#1a426b; font-size:16px; line-height:1.35; letter-spacing:-.15px; }
+.ir-section-heading p { margin:3px 0 0; color:#758aa1; font-size:11px; line-height:1.45; }
+.ir-heading-icon { display:grid; place-items:center; width:31px; height:31px; flex:none; border:1px solid #dceafa; border-radius:9px; background:#eff6ff; color:#2879df; font-size:17px; font-weight:750; }
+.ir-valuation-summary { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(180px,.9fr); gap:14px; align-content:start; }
+.ir-valuation-summary>.ir-section-heading { grid-column:1 / -1; }
+.ir-valuation-highlight { min-height:138px; padding:15px 16px 12px; border:1px solid #dbeee6; border-radius:9px; background:linear-gradient(135deg,#effaf5,#f8fffb); }
+.ir-valuation-highlight>span,.ir-recommendation-box>span { color:#5c7d72; font-size:11px; font-weight:650; }
+.ir-fair-value { display:flex; align-items:baseline; gap:7px; margin-top:8px; }
+.ir-fair-value strong { color:#153f63; font-size:32px; line-height:1; letter-spacing:-1px; }
+.ir-fair-value small { color:#315d7b; font-size:13px; font-weight:650; }
+.ir-fair-value b { margin-left:auto; color:#0b9d74; font-size:12px; white-space:nowrap; }
+.ir-valuation-highlight>p { margin:10px 0 0; color:#71869a; font-size:11px; }
+.ir-valuation-highlight>p strong { color:#3d617c; font-weight:650; }
+.ir-range-caption { display:block; margin-top:8px; color:#94a6b4; font-size:9px; }
+.ir-recommendation-box { padding:12px 14px; border:1px solid #e5edf5; border-radius:9px; background:#fff; }
+.ir-recommendation-box>span { display:inline-block; margin-top:4px; color:#7b8fa3; }
+.ir-buy-label { float:right; padding:5px 11px; border-radius:7px; background:#12a779; color:white; font-size:11px; letter-spacing:.35px; }
+.ir-recommendation-box dl { display:grid; gap:14px; margin:17px 0 4px; }
+.ir-recommendation-box dl>div { display:grid; gap:4px; }
+.ir-recommendation-box dt { color:#798da2; font-size:10px; }
+.ir-recommendation-box dd { margin:0; color:#3a5b79; font-size:12px; font-weight:650; }
+.ir-chart-card { display:flex; flex-direction:column; min-width:0; }
+.ir-chart-card .ir-section-heading { justify-content:space-between; align-items:flex-start; }
+.ir-chart-legend { display:flex; gap:13px; flex:none; padding-top:2px; }
+.ir-chart-legend span { display:flex; align-items:center; gap:5px; color:#72869d; font-size:10px; white-space:nowrap; }
+.ir-chart-legend i { width:9px; height:9px; border-radius:50%; background:#2378ed; }
+.ir-chart-legend i.is-target { background:#a8c3ed; }
+.ir-comparison-chart { display:block; width:100%; height:auto; min-height:180px; margin-top:11px; overflow:visible; }
+.ir-chart-grid { stroke:#eaf0f7; stroke-width:1; }
+.ir-chart-axis { fill:#8293a5; font:11px Arial,sans-serif; }
+.ir-chart-value { fill:#536f8a; font:11px Arial,sans-serif; }
+.ir-chart-model-label { fill:#556f89; font:11px Arial,sans-serif; }
+.ir-chart-bar-target { fill:#267bed; }
+.ir-chart-bar-current { fill:#afc7eb; }
+.ir-model-section { display:grid; gap:10px; scroll-margin-top:16px; }
+.ir-section-title { padding:0 3px; }
+.ir-model-count { margin-left:auto; padding:5px 9px; border-radius:20px; background:#eef5ff; color:#4276b3; font-size:10px; font-weight:650; }
+.ir-model-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; }
+.ir-model-card { padding:13px 12px 12px; }
+.ir-model-card>header { display:grid; grid-template-columns:30px minmax(0,1fr) max-content; align-items:center; gap:7px; min-height:37px; }
+.ir-model-icon { display:grid; place-items:center; width:29px; height:29px; border:1px solid #dceafa; border-radius:8px; background:#f0f7ff; color:#2477de; font-size:12px; font-weight:800; }
+.ir-model-card header h4 { margin:0; color:#315477; font-size:11px; line-height:1.3; }
+.ir-model-card header p { margin:2px 0 0; color:#8092a6; font-size:9px; line-height:1.3; }
+.ir-model-card header button { padding:3px 0 3px 4px; border:0; background:transparent; color:#3976bf; font-size:9px; font-weight:650; white-space:nowrap; cursor:pointer; }
+.ir-model-card header button:hover { color:#125dc0; text-decoration:underline; }
+.ir-model-value { display:flex; align-items:baseline; gap:5px; margin-top:13px; }
+.ir-model-value strong { color:#193f66; font-size:21px; letter-spacing:-.45px; white-space:nowrap; }
+.ir-model-value>span { color:#6e8298; font-size:10px; font-weight:600; }
+.ir-model-value em { margin-left:auto; padding:4px 6px; border-radius:5px; background:#e5f7ef; color:#148265; font-size:8px; font-style:normal; white-space:nowrap; }
+.ir-model-change { display:block; margin:5px 0 11px; font-size:11px; font-weight:700; }
+.ir-model-change.positive,.ir-financial-table .positive { color:#0b9d76; }
+.ir-model-change.negative { color:#d75c70; }
+.ir-model-card dl { display:grid; gap:7px; margin:0; }
+.ir-model-card dl>div { display:flex; justify-content:space-between; gap:8px; }
+.ir-model-card dt { color:#778ba1; font-size:10px; }
+.ir-model-card dd { margin:0; color:#536d87; font-size:10px; font-weight:600; text-align:right; white-space:nowrap; }
+.ir-bottom-grid { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1.15fr); gap:12px; align-items:stretch; }
+.ir-financial-card,.ir-health-card,.ir-summary-card { scroll-margin-top:16px; }
+.ir-financial-card>.ir-section-heading,.ir-health-card>.ir-section-heading,.ir-summary-card>.ir-section-heading { margin-bottom:11px; }
+.ir-financial-card .ir-section-heading p { max-width:340px; }
+.ir-table-scroll { min-width:0; overflow:auto; }
+.ir-financial-table { width:100%; border-collapse:collapse; text-align:left; white-space:nowrap; font-size:10px; }
+.ir-financial-table th,.ir-financial-table td { padding:8px 5px; border-bottom:1px solid #edf2f7; }
+.ir-financial-table thead th { color:#7b8ea3; background:#f7f9fc; font-size:9px; font-weight:600; }
+.ir-financial-table tbody th { color:#5c7188; font-weight:500; }
+.ir-financial-table tbody td { color:#45627e; font-variant-numeric:tabular-nums; }
+.ir-financial-table tbody td:last-child { font-weight:700; }
+.ir-financial-table tbody tr:last-child th,.ir-financial-table tbody tr:last-child td { border-bottom:0; }
+.ir-health-state { margin-left:auto; padding:6px 9px; border-radius:99px; background:#e9f8f1; color:#0a956f; font-size:10px; font-weight:700; white-space:nowrap; }
+.ir-health-state b { margin-left:4px; font-size:14px; }
+.ir-health-content { display:grid; grid-template-columns:118px minmax(0,1fr); gap:13px; align-items:center; padding:8px 3px 12px; }
+.ir-health-gauge { --ir-gauge:295deg; display:grid; place-items:center; width:112px; aspect-ratio:1; border-radius:50%; background:conic-gradient(from -90deg,#16a779 var(--ir-gauge),#e5edf4 0); position:relative; }
+.ir-health-gauge::before { content:""; position:absolute; inset:9px; border-radius:50%; background:white; }
+.ir-health-gauge>div { z-index:1; display:grid; justify-items:center; gap:4px; }
+.ir-health-gauge strong { color:#28466a; font-size:22px; }
+.ir-health-gauge strong small { color:#536d87; font-size:10px; }
+.ir-health-gauge>div>span { color:#7a8da2; font-size:9px; }
+.ir-health-checks { display:grid; gap:9px; margin:0; padding:0; list-style:none; }
+.ir-health-checks li { display:flex; align-items:center; gap:7px; color:#5e748b; font-size:10px; line-height:1.35; }
+.ir-health-checks li>span { display:grid; place-items:center; width:14px; height:14px; flex:none; border-radius:50%; background:#dcf5e9; color:#0ba77b; font-size:9px; font-weight:800; }
+.ir-key-insight { display:flex; gap:9px; padding:11px 12px; border:1px solid #e4effb; border-radius:8px; background:#f4f9ff; }
+.ir-key-insight>span { color:#307bda; font-size:18px; }
+.ir-key-insight strong { color:#32638e; font-size:11px; }
+.ir-key-insight p { margin:3px 0 0; color:#6b8096; font-size:10px; line-height:1.5; }
+.ir-summary-list { display:grid; }
+.ir-summary-row { display:grid; grid-template-columns:24px minmax(0,1fr) max-content; align-items:center; gap:8px; min-height:53px; padding:7px 1px; border-bottom:1px solid #edf2f7; }
+.ir-summary-row:last-child { border-bottom:0; }
+.ir-summary-icon { display:grid; place-items:center; width:23px; height:23px; border-radius:7px; background:#eff6ff; color:#3781df; font-size:14px; }
+.ir-summary-row strong { color:#3e5d7b; font-size:11px; }
+.ir-summary-row p { margin:3px 0 0; color:#71869c; font-size:10px; line-height:1.35; }
+.ir-summary-status { padding:4px 7px; border-radius:99px; background:#e9f8f1; color:#128366; font-size:9px; font-weight:700; white-space:nowrap; }
+.ir-summary-status.neutral { background:#eef5ff; color:#4e76a7; }
+.ir-final-recommendation { display:grid; grid-template-columns:32px minmax(0,1fr) max-content; align-items:start; gap:12px; padding:16px 18px; scroll-margin-top:16px; }
+.ir-final-recommendation h2 { margin:0; color:#1d456d; font-size:16px; }
+.ir-final-recommendation p { margin:5px 0 4px; color:#6c8299; font-size:11px; line-height:1.55; }
+.ir-final-recommendation small { color:#8b9caf; font-size:10px; }
+.ir-final-recommendation>button { align-self:center; min-height:40px; padding:9px 14px; border:1px solid #176df3; border-radius:8px; background:#176df3; color:white; font-size:11px; font-weight:700; white-space:nowrap; cursor:pointer; }
+.ir-final-recommendation>button:hover { background:#0d5fdc; }
+.ir-page-footnote { padding:0 2px 5px; color:#8495a8; font-size:10px; line-height:1.5; }
+.ir-detail-dialog { width:min(650px,calc(100vw - 40px)); padding:24px; }
+.ir-detail-dialog>header h2 { color:#1c4268; }
+.ir-detail-dialog .dashboard-dialog-body { display:grid; gap:14px; color:#637a92; font-size:13px; line-height:1.6; }
+.ir-detail-dialog .dashboard-dialog-body p { margin:0; }
+.ir-detail-dialog dl { display:grid; gap:0; margin:0; padding:8px 14px; border:1px solid #e5edf6; border-radius:9px; background:#f8fbff; }
+.ir-detail-dialog dl>div { display:flex; justify-content:space-between; gap:15px; padding:10px 0; border-bottom:1px solid #e8eff6; }
+.ir-detail-dialog dl>div:last-child { border:0; }
+.ir-detail-dialog dt { color:#74899f; }
+.ir-detail-dialog dd { margin:0; color:#244a70; font-weight:700; text-align:right; }
+.ir-dialog-close { justify-self:end; min-height:38px; padding:8px 16px; border:1px solid #d6e5f5; border-radius:7px; background:white; color:#326ba8; font-weight:650; cursor:pointer; }
+.investment-research button:focus-visible { outline:3px solid #78b4fa; outline-offset:2px; }
+@media(max-width:1250px) {
+ .ir-company-overview { grid-template-columns:minmax(200px,1.2fr) minmax(185px,1fr) repeat(2,minmax(105px,.65fr)) max-content; row-gap:10px; padding:7px 0; }
+ .ir-company-stat:nth-of-type(n+5) { display:none; }
+ .ir-model-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+ .ir-model-card:nth-child(n+4) { display:block; }
+ .ir-bottom-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .ir-summary-card { grid-column:1 / -1; }
+ .ir-summary-list { grid-template-columns:1fr 1fr; column-gap:18px; }
+ .ir-summary-row:nth-last-child(2) { border-bottom:0; }
+}
+@media(max-width:850px) {
+ .ir-company-overview { grid-template-columns:minmax(0,1.2fr) minmax(180px,1fr) repeat(2,minmax(90px,.55fr)); }
+ .ir-company-stat:nth-of-type(n+5) { display:none; }
+ .ir-watch-button { grid-column:1 / -1; justify-self:start; margin:3px 0 0; }
+ .ir-top-grid { grid-template-columns:1fr; }
+ .ir-chart-card { min-height:270px; }
+ .ir-comparison-chart { max-height:245px; }
+ .ir-bottom-grid { grid-template-columns:1fr 1fr; }
+ .ir-financial-card { grid-column:1 / -1; }
+ .ir-financial-table { font-size:12px; }
+ .ir-financial-table th,.ir-financial-table td { padding:10px 9px; }
+}
+@media(max-width:600px) {
+ .investment-research { gap:11px; }
+ .ir-company-card { padding:11px 12px 0; }
+ .ir-company-overview { grid-template-columns:1fr 1fr; gap:9px 0; }
+ .ir-company-identity { grid-column:1 / -1; }
+ .ir-quote { padding:7px 8px 7px 0; border-left:0; }
+ .ir-company-stat { padding-inline:8px; }
+ .ir-company-stat:nth-of-type(n+5) { display:grid; }
+ .ir-company-stat:nth-of-type(3),.ir-company-stat:nth-of-type(4),.ir-company-stat:nth-of-type(5),.ir-company-stat:nth-of-type(6) { border-right:0; }
+ .ir-watch-button { grid-column:1 / -1; }
+ .ir-tabs { gap:4px; }
+ .ir-tabs button { min-height:38px; padding-inline:14px; font-size:12px; }
+ .ir-disclosure { align-items:flex-start; font-size:10px; line-height:1.4; }
+ .ir-top-grid { gap:10px; }
+ .ir-card { padding:14px; }
+ .ir-valuation-summary { grid-template-columns:1fr; }
+ .ir-valuation-summary>.ir-section-heading { grid-column:auto; }
+ .ir-valuation-highlight { min-height:132px; }
+ .ir-recommendation-box dl { grid-template-columns:1fr 1fr; gap:10px; }
+ .ir-chart-card .ir-section-heading { flex-wrap:wrap; }
+ .ir-chart-legend { margin-left:40px; }
+ .ir-comparison-chart { min-height:190px; }
+ .ir-model-grid { grid-template-columns:1fr 1fr; }
+ .ir-model-card { padding:13px; }
+ .ir-model-card>header { grid-template-columns:30px minmax(0,1fr); }
+ .ir-model-card header button { grid-column:2; justify-self:start; }
+ .ir-model-value strong { font-size:20px; }
+ .ir-bottom-grid { grid-template-columns:1fr; }
+ .ir-financial-card,.ir-summary-card { grid-column:auto; }
+ .ir-summary-list { grid-template-columns:1fr; }
+ .ir-summary-row:nth-last-child(2) { border-bottom:1px solid #edf2f7; }
+ .ir-health-content { grid-template-columns:110px minmax(0,1fr); }
+ .ir-health-gauge { width:102px; }
+ .ir-final-recommendation { grid-template-columns:30px minmax(0,1fr); padding:14px; }
+ .ir-final-recommendation>button { grid-column:2; justify-self:start; }
+}
+@media(max-width:390px) {
+ .ir-model-grid { grid-template-columns:1fr; }
+ .ir-model-card>header { grid-template-columns:30px minmax(0,1fr) max-content; }
+ .ir-model-card header button { grid-column:auto; justify-self:auto; }
+ .ir-company-identity h1 { font-size:18px; }
+ .ir-quote>strong { font-size:19px; }
+ .ir-company-stat strong { font-size:13px; }
+ .ir-health-content { grid-template-columns:1fr; justify-items:center; }
+ .ir-health-checks { grid-template-columns:1fr 1fr; width:100%; }
+}
+
+/* Clear reading size for the dense valuation tables and model cards. */
+.ir-disclosure { font-size:11px; }
+.ir-tabs button { font-size:13px; }
+.ir-section-heading h2 { font-size:18px; }
+.ir-section-heading p { font-size:12px; }
+.ir-chart-legend span { font-size:11px; }
+.ir-chart-axis,.ir-chart-value,.ir-chart-model-label { font-size:12px; }
+.ir-recommendation-box>span,.ir-recommendation-box dt { font-size:12px; }
+.ir-recommendation-box dd { font-size:13px; }
+.ir-model-card header h4 { font-size:13px; }
+.ir-model-card header p { font-size:10px; }
+.ir-model-card header button { font-size:10px; }
+.ir-model-value strong { font-size:23px; }
+.ir-model-change { font-size:12px; }
+.ir-model-card dt,.ir-model-card dd { font-size:11px; }
+.ir-model-value em { font-size:9px; }
+.ir-financial-table { font-size:12px; }
+.ir-financial-table thead th { font-size:10px; }
+.ir-financial-table th,.ir-financial-table td { padding:9px 6px; }
+.ir-health-checks li { font-size:12px; }
+.ir-key-insight strong { font-size:12px; }
+.ir-key-insight p { font-size:11px; }
+.ir-summary-row { min-height:56px; }
+.ir-summary-row strong { font-size:12px; }
+.ir-summary-row p { font-size:11px; }
+.ir-summary-status { font-size:10px; }
+.ir-final-recommendation h2 { font-size:18px; }
+.ir-final-recommendation p { font-size:12px; }
+.ir-final-recommendation small { font-size:11px; }
+.ir-final-recommendation>button { font-size:12px; }
+.ir-page-footnote { font-size:11px; }
+.ir-chart-bar-target { fill:#afc7eb; }
+.ir-chart-bar-current { fill:#267bed; }
+@media(max-width:600px) {
+ .ir-tabs button { font-size:12px; }
+ .ir-section-heading h2 { font-size:17px; }
+ .ir-financial-table { min-width:560px; }
+}

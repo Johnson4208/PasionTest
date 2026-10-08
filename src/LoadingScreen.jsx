@@ -1,0 +1,6 @@
+import React from 'react';
+import BrandLogo from './BrandLogo';
+import {usePreferences} from './Preferences';
+import './loading.scss';
+export function WorkspaceLoader({label}){const {t}=usePreferences();return <div className="workspace-loader" role="status" aria-live="polite"><div className="loader-heading"><span className="loader-orbit" aria-hidden="true"/><div><span className="loader-eyebrow">{t('PASION WORKSPACE')}</span><h2>{t('Opening {label}',{label})}</h2><p>{t('Getting your view ready.')}</p></div></div><div className="loading-skeleton" aria-hidden="true"><div className="skeleton-line short"/><div className="skeleton-stats">{[0,1,2].map(i=><div key={i}><span/><b/></div>)}</div><div className="skeleton-panel"><div className="skeleton-line"/><div className="skeleton-line medium"/><div className="skeleton-chart"><i/><i/><i/><i/><i/><i/><i/></div></div></div></div>}
+export default function LoadingScreen(){const {t}=usePreferences();return <main className="session-loading branded-loading" role="status" aria-live="polite"><div className="loading-brand"><BrandLogo/></div><span className="loader-orbit" aria-hidden="true"/><h1>{t('A clearer view awaits.')}</h1><p>{t('Checking your session…')}</p><div className="session-loading-track" aria-hidden="true"><i/></div><span className="loading-caption">{t('PASION · Perspective drives performance')}</span></main>}

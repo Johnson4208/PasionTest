@@ -1,0 +1,18 @@
+.home-shell .dashboard-context {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 20px;
+  align-items: stretch;
+  margin-bottom: 24px;
+  min-width: 0;
+
+  > .home-card { min-width: 0; }
+}
+
+@media (max-width: 1200px) {
+  .home-shell .dashboard-context { grid-template-columns: minmax(0, 1fr) 280px; gap: 16px; }
+}
+
+@media (max-width: 1050px) {
+  .home-shell .dashboard-context { grid-template-columns: minmax(0, 1fr); }
+}

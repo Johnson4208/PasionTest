@@ -1,0 +1,44 @@
+.home-shell .dashboard-alerts {
+  --alert-red: #d8214d;
+  --alert-red-soft: #fff0f4;
+  --alert-amber: #a56000;
+  --alert-amber-bright: #ffab1b;
+  --alert-amber-soft: #fff5df;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 298px;
+  padding: 20px;
+  background: var(--pref-surface);
+  border-color: var(--pref-border);
+  .dashboard-alerts-heading { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+  .eyebrow { color: var(--pref-accent); font-size: 10px; letter-spacing: 1.2px; margin: 0 0 6px; }
+  h2 { font-family: Inter, 'Segoe UI', sans-serif; font-size: 21px; font-weight: 650; letter-spacing: -.5px; }
+  svg { width: 18px; height: 18px; flex-shrink: 0; }
+  .dashboard-alerts-emblem { display: grid; place-items: center; width: 34px; height: 34px; flex-shrink: 0; color: var(--alert-amber); background: var(--alert-amber-soft); border: 1px solid #ffbd4555; border-radius: 11px; &.is-clear { color: var(--pref-success); background: var(--pref-success-soft); border-color: var(--pref-border); } }
+  .dashboard-alerts-status { display: flex; justify-content: space-between; gap: 8px; margin: 14px 0 11px; font-size: 10px; color: var(--pref-muted); > span { display: flex; align-items: center; gap: 5px; } i { width: 6px; height: 6px; background: var(--pref-success); border-radius: 50%; } .has-attention { color: var(--alert-amber); font-weight: 600; i { background: var(--alert-amber-bright); box-shadow: 0 0 0 3px #ffab1b18; } } }
+  .dashboard-alerts-list { list-style: none; margin: 0; padding: 0 4px 0 0; height: 152px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--pref-border) transparent; }
+  .dashboard-alerts-list li + li { border-top: 1px solid var(--pref-border); }
+  .dashboard-alerts-item { display: flex; align-items: flex-start; width: 100%; gap: 9px; text-align: start; background: transparent; border: 0; border-radius: 6px; padding: 10px 0; color: var(--pref-text); &:hover { background: var(--pref-soft); } }
+  .dashboard-alerts-icon { display: grid; place-items: center; flex: 0 0 26px; width: 26px; height: 26px; border-radius: 7px; color: var(--alert-amber); background: var(--alert-amber-soft); svg { width: 15px; height: 15px; } }
+  .dashboard-alerts-copy { display: block; min-width: 0; flex: 1; }
+  .dashboard-alerts-line { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 4px 6px; strong { font-size: 11px; line-height: 1.45; color: var(--pref-heading); font-weight: 650; } b { font-size: 10px; line-height: 1.4; font-weight: 650; color: var(--alert-amber); } }
+  .dashboard-alerts-copy small { display: block; font-size: 10px; line-height: 1.5; color: var(--pref-muted); margin-top: 3px; overflow-wrap: anywhere; }
+  .is-danger { .dashboard-alerts-icon { background: var(--alert-red-soft); color: var(--alert-red); } b { color: var(--alert-red); } }
+  .is-monitoring { .dashboard-alerts-icon { background: var(--pref-accent-soft); color: var(--pref-accent); } b { color: var(--pref-accent); } }
+  .dashboard-alerts-empty { min-height: 152px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; text-align: center; padding: 10px; svg { color: var(--pref-success); } strong { color: var(--pref-heading); font-size: 12px; } p { color: var(--pref-muted); font-size: 11px; line-height: 1.5; margin: 0; } }
+  footer { border-top: 1px solid var(--pref-border); padding-top: 11px; margin-top: auto; > small { display: block; color: var(--pref-muted); font-size: 9px; margin-top: 8px; } }
+  .dashboard-alerts-actions { display: flex; align-items: center; justify-content: space-between; gap: 8px; button { border: 0; background: transparent; color: var(--pref-accent); font-size: 11px; font-weight: 600; padding: 0; text-align: start; &:hover { color: var(--pref-accent-hover); text-decoration: underline; } } }
+}
+
+html[data-theme='dark'] .home-shell .dashboard-alerts {
+  --alert-red: #ff7095;
+  --alert-red-soft: #432338;
+  --alert-amber: #ffc15b;
+  --alert-amber-bright: #ffbd38;
+  --alert-amber-soft: #3d3020;
+}
+
+@media (max-width: 650px) {
+  .home-shell .dashboard-alerts { padding: 18px; h2 { font-size: 20px; } }
+}
